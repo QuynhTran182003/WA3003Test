@@ -61,7 +61,7 @@ $(document).ready(function(){
                                 <button type="button" class="btn btn-danger btnDislike m-2">Dislike</button>
                                 <button type="button" class="btn btn-primary btnGenNew m-2">Generate new</button>
                             `;
-                            $("body").append(`<div class="grpBtn d-flex justify-content-center"></div>`);
+                            $("main").append(`<div class="grpBtn d-flex justify-content-center"></div>`);
                             $(".grpBtn").html(html);
                             
                         }
@@ -71,20 +71,21 @@ $(document).ready(function(){
         }
     })
 
-    $(".likedList").click(function(){
+    $(".likedFactsBtn").click(function(){
         for (const fact of likedList) {
             let html = `
-                <p>${fact}</p>
+                <p>${fact.textFact}</p>
             `;
 
             $(".likedFactsDiv").append(html);
         }
     })
 
-    $(".dislikeList").click(function(){
+    $(".dislikeFactsBtn").click(function(){
         for (const fact of dislikedList) {
+            let h = `<p>Disliked`;
             let html = `
-                <p>${fact}</p>
+                ${fact.textFact}</p>
             `;
 
             $(".dislikedFactsDiv").append(html);
